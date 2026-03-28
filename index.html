@@ -30,47 +30,40 @@
 
     <hr>
     <h2 class="titulo2">Contacto</h2>
-    <form>
-        <label for="name">Nombre:</label>
-        <!-- input text sirve para textos -->
-        <input type="text" id="name" name="name" placeholder="Ingrese su nombre">
-        <label for="email">Correo electrónico:</label>
-        <!-- input mail para correos electrónicos -->
-        <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
-        <label for="birthdate">Fecha de Nacimiento:</label>
-        <input type="date" id="birthdate" name="birthdate">
-        <br>
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" cols="5" rows="3" placeholder="Escribe tu mensaje aquí"></textarea>
-        <!-- los botones funcionan con la etiqueta form -->
-        <input type="reset" value="Limpiar">
-        <input type="submit" value="Enviar">
-    </form>
-    <script>
-        // tres formas de hacer funciones
-        function saludar() {
-            alert("Hola, bienvenido a la clase de HTML") 
-        }
-        //llamar a la función
-        saludar()
-        // función anónima
-        const despedir = function() {
-            alert("Adiós, gracias por asistir a la clase de HTML")
-        }
-        //llamar a la función anónima
-        despedir()
-        // función flecha
-        const preguntar = () => {
-            const respuesta = prompt("¿Te gustó la clase de HTML? (sí/no)")
-            if (respuesta.toLowerCase() === "sí") {
-                alert("¡Me alegra que te haya gustado!")
-            } else {
-                alert("¡Gracias por tu feedback, seguiré mejorando!")
-            }
-        }
-        //llamar a la función flecha
-        preguntar() 
-        //Tarea utilizando funciones validar el formulario de contacto
-        
-    </script>
+    <section class="contacto-layout">
+        <form>
+            <label for="name">Nombre:</label>
+            <!-- input text sirve para textos -->
+            <input type="text" id="name" name="name" placeholder="Ingrese su nombre">
+            <label for="email">Correo electrónico:</label>
+            <!-- input mail para correos electrónicos -->
+            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico">
+            <label for="birthdate">Fecha de Nacimiento:</label>
+            <input type="date" id="birthdate" name="birthdate">
+            <br>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" cols="5" rows="3" placeholder="Escribe tu mensaje aquí"></textarea>
+            <!-- los botones funcionan con la etiqueta form -->
+            <input type="reset" value="Limpiar">
+            <!-- <input type="submit" value="Enviar" onclick="validar(event)"> -->
+            <input type="button" value="Enviar" id="btnGuardar">
+        </form>
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo electrónico</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Mensaje</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tablaContactos">
+                    <!-- Aquí se agregarán los contactos -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script type="module" src="js/validaciones.js"></script>
 </body>

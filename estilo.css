@@ -56,6 +56,17 @@ form {
     gap: 10px;
 }
 
+.contacto-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(420px, 1.4fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.contacto-layout form {
+    max-width: none;
+}
+
 input,
 textarea {
     border: 2px solid #1f6fd1;
@@ -65,7 +76,7 @@ textarea {
 }
 
 input[type="reset"],
-input[type="submit"] {
+input[type="button"] {
     cursor: pointer;
     font-weight: bold;
     border: none;
@@ -76,7 +87,61 @@ input[type="reset"] {
     color: #0f2f57;
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: #0b4ea2;
     color: #ffffff;
+}
+
+.tabla-contenedor {
+    max-width: 1000px;
+    overflow-x: auto;
+}
+
+.contacto-layout .tabla-contenedor {
+    max-width: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 2px solid #1f6fd1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(15, 47, 87, 0.12);
+}
+
+.contacto-layout table {
+    margin-top: 0;
+}
+
+thead {
+    background: linear-gradient(90deg, #0b4ea2, #1f6fd1);
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #d9e6f7;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7fbff;
+}
+
+tbody tr:hover {
+    background-color: #fff4bf;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 920px) {
+    .contacto-layout {
+        grid-template-columns: 1fr;
+    }
 }
